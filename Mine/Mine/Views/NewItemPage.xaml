@@ -24,7 +24,7 @@
             <StackLayout
                 Orientation="Horizontal">
                 <Stepper 
-                    Value="{Binding item.value, Mode=TwoWay}"
+                    Value="{Binding Item.value, Mode=TwoWay}"
                     Minimum="0"
                     Maximum="10"
                     Increment="1"
