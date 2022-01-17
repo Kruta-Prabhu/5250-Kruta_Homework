@@ -34,9 +34,21 @@ namespace Mine.Views
             await Navigation.PopModalAsync();
         }
 
+
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }
+
+        /// <summary>
+        /// Update the display value when the stepper changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ValueValue.Text = string.Format("{0}", e.NewValue);
+        }
+
     }
 }
