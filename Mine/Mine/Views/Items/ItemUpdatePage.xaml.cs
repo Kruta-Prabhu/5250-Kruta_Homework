@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
+using Mine.ViewModels;
 using Xamarin.Forms.Xaml;
 
 using Mine.Models;
@@ -25,6 +26,18 @@ namespace Mine.Views
                 Description = "This is an item description."
             };
 
+            BindingContext = this;
+        }
+
+        /// <summary>
+        /// Constructor that takes a viewModel
+        /// </summary>
+        /// <param name="viewModel"></param>
+        public ItemUpdatePage(ItemReadViewModel viewModel)
+        {
+            InitializeComponent();
+
+            Item = viewModel.Item;
             BindingContext = this;
         }
 
