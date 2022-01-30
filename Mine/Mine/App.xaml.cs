@@ -9,11 +9,15 @@ namespace Mine
     public partial class App : Application
     {
 
+        /// <summary>
+        /// Changed the registration from MockDataStore to DatabaseService
+        /// </summary>
         public App()
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
+            DependencyService.Register<DatabaseService>();
             MainPage = new MainPage();
         }
 
