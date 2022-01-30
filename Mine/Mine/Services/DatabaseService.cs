@@ -77,10 +77,24 @@ namespace Mine.Services
         }
 
     
-
-        public Task<bool> DeleteAsync(string id)
+        /// <summary>
+        /// DeleteAsync is used to delete an Item with given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<bool> DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            var data = await ReadAsync(id);
+            if(data == null)
+            {
+                return false;
+            }
+            var result = await Database.DeleteAsync(data);
+            if(result == 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
