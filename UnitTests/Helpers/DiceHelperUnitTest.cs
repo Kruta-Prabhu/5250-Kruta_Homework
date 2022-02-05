@@ -83,6 +83,9 @@ namespace UnitTests.Helpers
 
         }
 
+        /// <summary>
+        /// Test for Invalid RollDice(0,10)
+        /// </summary>
         [Test]
         public void RollDice_InValid_Roll_0_Dice_10_Should_Return_Zero()
         {
@@ -96,6 +99,25 @@ namespace UnitTests.Helpers
             //Assert
             Assert.AreEqual(true, result == 0);
         }
+
+        /// <summary>
+        /// Test for Invalid RollDice(1,0)
+        /// </summary>
+        [Test]
+        public void RollDice_InValid_Roll_1_Dice_0_Should_Return_Zero()
+        {
+            //Arrange
+
+            //Act
+            var result = DiceHelper.RollDice(1,0);
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(true, result == 0);
+
+        }
+
 
     }
 }
